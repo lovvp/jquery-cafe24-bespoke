@@ -1,0 +1,67 @@
+<!-- 
+  !제이쿼리 선택자
+  제이쿼리에서는 css선택자 뿐만 아니라 몇몇 비표준 선택자까지도 사용할 수 있다.
+  이러한 비표준 선택자를 사용하면 선택한 요소를 저장하거나, 그 결과에 대해 필터링까지 할 수 있다.
+
+  !선택한 요소의 저장
+  제이쿼리에서는 선택한 요소들을 변수에 저장하여 사용할 수 있다.
+  다음 예제는 문서 내의 모든 <li>요소를 선택하여 변수에 저장한 후, 해당 변수를 사용하는 예제
+ -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Element Selection</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(function(){
+      var items= $("li");
+      $('button').on('click',function(){
+        $('#len').text(`<li>의 총 개수는 ${items.length}입니다.`)
+      })
+      $('#filter').on('click',function(){
+        $('li:has(span)').text('<span>요소를 가지고 있는 <li>입니다.')
+      })
+      $("#check").on("click", function () {
+        // 체크되어 있는 요소를 모두 선택함.
+        $(":checked").next().text("체크되어 있는 요소는 이 요소입니다.");
+      });
+    })
+  </script>
+</head>
+
+<body>
+
+  <h1>선택한 요소의 저장</h1>
+
+  <ul>
+    <li>첫 번째 아이템이에요!</li>
+    <li>두 번째 아이템이에요!</li>
+    <li>세 번째 아이템이에요!</li>
+  </ul>
+  <button>선택된 요소의 길이는?</button>
+  <p id="len"></p>
+
+  <h1>선택한 요소의 필터링</h1>
+  
+  <ul>
+    <li>첫 번째 아이템이에요!</li>
+    <li><span>두 번째</span> 아이템이에요!</li>
+    <li>세 번째 아이템이에요!</li>
+  </ul>
+  <button id="filter">필터링</button>
+
+  <h1>Form 요소의 선택</h1>
+  
+  <form>
+    <input type="checkbox" name="lecture" value="html"> <span>HTML</span> <br>
+    <input type="checkbox" name="lecture" value="css"> <span>CSS</span> <br>
+    <input type="checkbox" name="lecture" value="javascript"> <span>자바스크립트</span> <br>
+    <input type="checkbox" name="lecture" value="jquery" checked> <span>제이쿼리</span>
+  </form>
+  <button id="check">필터링</button>
+</body>
+
+</html>

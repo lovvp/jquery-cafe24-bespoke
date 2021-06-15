@@ -1,0 +1,36 @@
+<!-- 
+  !.remove()
+  .remove() 메소드는 선택한 요소를 DOM트리에서 삭제한다.
+  이 때 삭제되는 요소와 연관된 제이쿼리 데이터나 이벤트도 모두 함께 삭제된다.
+ -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Element Remove</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(function(){
+      $('button').on('click',function(){
+        $('.content').remove('.first, .third')
+      })
+    })
+  </script>
+</head>
+
+<body>
+
+  <h1>.remove() 메소드</h1>
+  <div>
+    <div class="content first">첫 번째 컨텐츠에요!</div>
+    <div class="content second">두 번째 컨텐츠에요!</div>
+    <div class="content third">세 번째 컨텐츠에요!</div>
+  </div>
+  <br>
+  <button>div 요소 삭제</button>
+
+</body>
+
+</html>

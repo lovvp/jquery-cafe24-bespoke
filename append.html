@@ -1,0 +1,47 @@
+<!-- 
+  !요소의 추가
+  제이쿼리는 새로운 요소나 콘텐츠를 손쉽게 추가할 수 있도록 여러 메소드를 제공한다.
+
+  !기존 요소의 내부에 추가
+  다음 메소드를 사용하면 기존 요소의 내부에 새로운 요소나 콘텐츠를 추가할 수 있다.
+
+  1.append()
+  2.prepend()
+  3.appendTo()
+  4.prependTo()
+
+  append() method
+  append() 는 선택한 요소의 '마지막'에 새로운 요소나 콘텐츠를 추가한다.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Element Insert</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(function(){
+      var i = 4;
+      $('button').on('click',function(){
+        $('#list').append(`<li>새로 추가된 ${i}번째 아이템이에요!</li>`)
+        i++;
+      })
+
+    })
+  </script>
+</head>
+
+<body>
+
+  <h1>.append() 메소드</h1>
+  <ul id="list">
+    <li>첫 번째 아이템이에요!</li>
+    <li>두 번째 아이템이에요!</li>
+    <li>세 번째 아이템이에요!</li>
+  </ul>
+  <button>아이템 추가</button>
+
+</body>
+
+</html>

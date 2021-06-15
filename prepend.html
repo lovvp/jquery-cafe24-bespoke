@@ -1,0 +1,36 @@
+<!-- 
+  prepend메소드
+  prepend()메소드는 선택한 요소의 
+  !처음에 새로운 요소나 콘텐츠를 추가한다.
+
+
+ -->
+ <!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Element Insert</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(function () {
+      $("button").on("click", function () {
+        $("#list").prepend("<li>새로 추가된 콘텐츠에요!</li>");
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <h1>.prepend() 메소드</h1>
+  <ul>
+    <li id="list">첫 번째 아이템이에요!</li>
+    <li>두 번째 아이템이에요!</li>
+    <li>세 번째 아이템이에요!</li>
+  </ul>
+  <button>아이템 추가</button>
+
+</body>
+
+</html>

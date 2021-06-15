@@ -22,11 +22,15 @@
   <script>
     $(function () {
       $("button").on("click", function () {
-        var newText = $("h1").html();	// <h1>요소의 텍스트를 읽어오는 getter 메소드
+        var newText = $("h1").html();	//1 <h1>요소의 텍스트를 읽어오는 getter 메소드
         console.log(newText)
-        $("#text").html(newText);		// id가 "text"인 요소에 새로운 텍스트를 설정하는 setter 메소드
+        $("#text").html(newText);		//2 id가 "text"인 요소에 새로운 텍스트를 설정하는 setter 메소드
       });
     });
+    //위 예제의 1번 라인처럼 .html()메소드에 인수를 전달하지 않고 호출하면, 해당 html 요소에서 값을 읽어오는
+    //getter 메소드로 사용된다.
+    //하지만 2번 라인처럼 인수를 전달하고 호출하면, 해당 html 요소에 새로운 값을 설정하는
+    //setter 메소드로 사용된다.
   </script>
 </head>
 
